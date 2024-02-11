@@ -26,30 +26,45 @@ const int maxn = 1e5+5;
 const int inf = 1e9+2;
 const int mod = 2e9;
 
+bool comp(pair<int, int>& a, pair<int, int>& b) {
+	if(a.f != b.f) {
+		return a.f < b.f;
+	} else {
+		return a.s > b.s;
+	}
+}
+
 void solve() {
 	int n; cin >> n;
-	vector<pair<ll, int>> guards;
+    vector<pair<int, int>> mtns(n);
+	vector<bool> blocked(n, false);
+    F0R(i, n) cin >> mtns[i].f >> mtns[i].s;
+
+	sort(all(mtns), comp);
+
+	int freach = 0, ans = 0;
+
 	F0R(i, n) {
-		int a, b; cin >> a >> b;
-		guards.pb(mp(a, 1));
-		guards.pb(mp(b, -1));
-	}
-
-	sort(all(guards));
-
-	int prev = 0, active = 0;
-	ll ans = 0, sgap = inf;
-
-	F0R(i, n*2) {
-		if(active > 0) {
-			ans += guards[i].f - prev;
-			sgap = min(sgap, guards[i].f - prev);
+		int creach = mtns[i].f + mtns[i].s;
+		if(mtns[i].f < freach && freach-mtns[i].f >= mtns[i].s) {
+			blocked[i] = true;
 		}
-		active += guards[i].s;
-		prev = guards[i].f;
+		freach = max(freach, creach);
 	}
 
-	cout << ans-sgap << endl;
+	R0F(i, n-1) {
+		int creach = mtns[i].f - mtns[i].s;
+		if(mtns[i].f > freach && mtns[i].f-freach >= mtns[i].s) {
+			blocked[i] = true;
+		} else {
+			if(!blocked[i]) {
+				ans++;
+			}
+		}
+		freach = min(freach, creach);
+	}
+
+	cout << ans << endl;
 }
 
 int main() {
@@ -57,8 +72,8 @@ int main() {
 	cin.tie(0);
 	cout.tie(0);
 
-	// freopen("lifeguards.in", "r", stdin);
-	// freopen("lifeguards.out", "w", stdout);
+	freopen("mountains.in", "r", stdin);
+	freopen("mountains.out", "w", stdout);
 
 	// int T;
 	// cin >> T;
