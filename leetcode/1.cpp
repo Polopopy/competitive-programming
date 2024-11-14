@@ -22,33 +22,14 @@ typedef unsigned long long ull;
 #define ins insert
 #define endl '\n'
 
-const int maxn = 1e5+5;
-const int inf = 1e9+2;
-const int mod = 2e9;
-
-void solve() {
-	string order, s; cin >> order >> s;
-	unordered_map<char, int> x;
-	F0R(i, sz(order)) x[order[i]] = i;
-	sort(all(s), [&](char a, char b){return x[a] < x[b];});
-	cout << s << endl;
-}
-
-int main() {
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-	cout.tie(0);
-
-	// freopen("fname.in", "r", stdin);
-	// freopen("fname.out", "w", stdout);
-
-	// int T;
-	// cin >> T;
-	// while(T--) {
-	//    solve();
-	// }
-
-	solve();
-
-	return 0;
+// O(n logn)
+vector<int> twoSum(vector<int>& nums, int target) {
+    map<int, int> seen;
+    F0R(i, sz(nums)) {
+        if(seen.find(target - nums[i]) != seen.end()) {
+            return {seen[target - nums[i]], i};
+        }
+        seen[nums[i]] = i;
+    }
+    return {-1, -1};
 }

@@ -21,17 +21,31 @@ typedef unsigned long long ull;
 #define all(x) x.begin(), x.end()
 #define ins insert
 #define endl '\n'
+#define YN(x) cout << (x ? "YES" : "NO") << endl
 
 const int maxn = 1e5+5;
 const int inf = 1e9+2;
 const int mod = 2e9;
 
+int nCr(int n, int r) {
+    if(r > n || r == 0 || n == 0) return 0;
+    double ret = 0;
+    F0R(i, r) ret += log(n-i) - log(i+1);
+    return (int)round(exp(ret));
+}
+
 void solve() {
-	string order, s; cin >> order >> s;
-	unordered_map<char, int> x;
-	F0R(i, sz(order)) x[order[i]] = i;
-	sort(all(s), [&](char a, char b){return x[a] < x[b];});
-	cout << s << endl;
+    int n, m, k; cin >> n >> m >> k;
+    bool ans = true;
+
+    if(ans && m < n-1) ans = false; // not enough
+    if(ans && m > n-1) { // too many and can't remove enough
+        int to_remove = m - n + 1;
+        int can_remove = nCr(n/k, k);
+        if(to_remove > can_remove) ans = false;
+    }
+
+    YN(ans);
 }
 
 int main() {
@@ -42,13 +56,13 @@ int main() {
 	// freopen("fname.in", "r", stdin);
 	// freopen("fname.out", "w", stdout);
 
-	// int T;
-	// cin >> T;
-	// while(T--) {
-	//    solve();
-	// }
+	int T;
+	cin >> T;
+	while(T--) {
+	   solve();
+	}
 
-	solve();
+	// solve();
 
 	return 0;
 }

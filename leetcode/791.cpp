@@ -22,33 +22,23 @@ typedef unsigned long long ull;
 #define ins insert
 #define endl '\n'
 
-const int maxn = 1e5+5;
-const int inf = 1e9+2;
-const int mod = 2e9;
-
-void solve() {
-	string order, s; cin >> order >> s;
-	unordered_map<char, int> x;
-	F0R(i, sz(order)) x[order[i]] = i;
-	sort(all(s), [&](char a, char b){return x[a] < x[b];});
-	cout << s << endl;
+// O(n logn)
+string customSortString(string order, string s) {
+    unordered_map<char, int> x;
+    F0R(i, sz(order)) x[order[i]] = i;
+    sort(all(s), [&](char a, char b){return x[a] < x[b];});
+    return s;
 }
 
-int main() {
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-	cout.tie(0);
-
-	// freopen("fname.in", "r", stdin);
-	// freopen("fname.out", "w", stdout);
-
-	// int T;
-	// cin >> T;
-	// while(T--) {
-	//    solve();
-	// }
-
-	solve();
-
-	return 0;
+// O(n)
+string customSortString(string order, string s) {
+    map<char, int> x;
+    string ret = "";
+    trav(c, s) x[c]++;
+    trav(c, order) {
+        R0F(i, x[c]-1) ret += c;
+        x[c] = 0;
+    }
+    trav(a, x) R0F(i, a.s-1) ret += a.f;
+    return ret;
 }

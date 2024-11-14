@@ -27,26 +27,24 @@ const int inf = 1e9+2;
 const int mod = 2e9;
 
 void solve() {
-	string order, s; cin >> order >> s;
-	unordered_map<char, int> x;
-	F0R(i, sz(order)) x[order[i]] = i;
-	sort(all(s), [&](char a, char b){return x[a] < x[b];});
-	cout << s << endl;
+	int n, k; cin >> n >> k;
+    multiset<pair<int, int>> cows;
+    F0R(i, n) {
+        int a, b; cin >> a >> b;
+        cows.ins(mp(b, a));
+    }
+
+    trav(x, cows) cout << x.f << ' ' << x.s << endl;
+
+    
+
+    trav(x, cows) cout << x.f << ' ' << x.s << endl;
 }
 
 int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
-
-	// freopen("fname.in", "r", stdin);
-	// freopen("fname.out", "w", stdout);
-
-	// int T;
-	// cin >> T;
-	// while(T--) {
-	//    solve();
-	// }
 
 	solve();
 

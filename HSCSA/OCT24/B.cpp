@@ -26,12 +26,27 @@ const int maxn = 1e5+5;
 const int inf = 1e9+2;
 const int mod = 2e9;
 
+int n;
+map<int, int> fortnite;
+set<int> diddy;
+
 void solve() {
-	string order, s; cin >> order >> s;
-	unordered_map<char, int> x;
-	F0R(i, sz(order)) x[order[i]] = i;
-	sort(all(s), [&](char a, char b){return x[a] < x[b];});
-	cout << s << endl;
+	cin >> n;
+    F0R(i, 2*n) {
+        int x;
+        cin >> x;
+        fortnite[x]++;
+        diddy.ins(x);
+    }
+    int party = -1;
+    trav(a, fortnite) {
+        party = max(party, a.s);
+    }
+
+    int ans = diddy.size()-1;
+    if(party == n) ans--;
+
+    cout << ans << endl;
 }
 
 int main() {
