@@ -38,10 +38,9 @@ void solve() {
         fortnite[x]++;
         diddy.ins(x);
     }
+    
     int party = -1;
-    trav(a, fortnite) {
-        party = max(party, a.s);
-    }
+    trav(a, fortnite) party = max(party, a.s);
 
     int ans = diddy.size()-1;
     if(party == n) ans--;
