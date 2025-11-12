@@ -1,0 +1,662 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"curr",
+				"current_nurse"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "CS211/week11/communication-satellite.cpp",
+			"settings":
+			{
+				"buffer_size": 942,
+				"line_ending": "Windows"
+			},
+			"undo_stack":
+			[
+				[
+					4,
+					1,
+					"revert",
+					null,
+					"AgAAAAAAAAAAAAAAAAAAAAAAAACvAwAAI2luY2x1ZGUgPGlvc3RyZWFtPgojaW5jbHVkZSA8Yml0cy9zdGRjKysuaD4KCnVzaW5nIG5hbWVzcGFjZSBzdGQ7Cgp0eXBlZGVmIGxvbmcgbG9uZyBsbDsKdHlwZWRlZiBsb25nIGRvdWJsZSBsZDsKdHlwZWRlZiB1bnNpZ25lZCBsb25nIGxvbmcgdWxsOwoKI2RlZmluZSBGT1IoaSwgYSwgYikgZm9yIChpbnQgaT1hOyBpPChiKTsgaSsrKQojZGVmaW5lIEYwUihpLCBhKSBGT1IoaSwgMCwgYSkKI2RlZmluZSBST0YoaSwgYSwgYikgZm9yIChpbnQgaSA9IChhKTsgaSA+PSAoYik7IC0taSkKI2RlZmluZSBSMEYoaSwgYSkgUk9GKGksIGEsIDApCiNkZWZpbmUgdHJhdihhLHgpIGZvciAoYXV0byYgYSA6IHgpCgojZGVmaW5lIHN6KHgpIChpbnQpKHgpLnNpemUoKQojZGVmaW5lIG1wIG1ha2VfcGFpcgojZGVmaW5lIHBiIHB1c2hfYmFjawojZGVmaW5lIGYgZmlyc3QKI2RlZmluZSBzIHNlY29uZAojZGVmaW5lIGFsbCh4KSB4LmJlZ2luKCksIHguZW5kKCkKI2RlZmluZSBpbnMgaW5zZXJ0ICAKI2RlZmluZSBlbmRsICdcbicKCmNvbnN0IGludCBtYXhuID0gMWU1KzU7CmNvbnN0IGludCBtb2QgPSAxZTcrNjsKCnZvaWQgc29sdmUoKSB7CiAgICBpbnQgbjsgY2luID4+IG47CiAgICBpbnQgeCA9IDA7CiAgICBGMFIoaSwgbikgewogICAgICAgIHggKz0gaTsKICAgIH0KICAgIGNvdXQgPDwgeCA8PCBlbmRsOwp9CgppbnQgbWFpbigpIHsKICAgIGlvc19iYXNlOjpzeW5jX3dpdGhfc3RkaW8oMCk7CiAgICBjaW4udGllKG51bGxwdHIpOwoKICAgIC8vIGZyZW9wZW4oImZpbGVuYW1lLmluIiwgInIiLCBzdGRpbik7CiAgICAvLyBmcmVvcGVuKCJmaWxlbmFtZS5vdXQiLCAidyIsIHN0ZG91dCk7CgogICAgLy8gaW50IFQ7CiAgICAvLyBjaW4gPj4gVDsKICAgIC8vIHdoaWxlKFQtLSkgewogICAgLy8gICAgIHNvbHZlKCk7CiAgICAvLyB9CgogICAgc29sdmUoKTsKfQAAAAAAAAAArwMAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					48,
+					1,
+					"insert",
+					{
+						"characters": "`"
+					},
+					"AQAAAAwCAAAAAAAADQIAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAADAIAAAAAAAAMAgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					54,
+					1,
+					"left_delete",
+					null,
+					"AQAAAAwCAAAAAAAADAIAAAAAAAABAAAAYA",
+					"AQAAAAAAAAABAAAADQIAAAAAAAANAgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					201,
+					1,
+					"revert",
+					null,
+					"AgAAAAAAAAAAAAAAAAAAAAAAAACvAwAAI2luY2x1ZGUgPGlvc3RyZWFtPgojaW5jbHVkZSA8Yml0cy9zdGRjKysuaD4KCnVzaW5nIG5hbWVzcGFjZSBzdGQ7Cgp0eXBlZGVmIGxvbmcgbG9uZyBsbDsKdHlwZWRlZiBsb25nIGRvdWJsZSBsZDsKdHlwZWRlZiB1bnNpZ25lZCBsb25nIGxvbmcgdWxsOwoKI2RlZmluZSBGT1IoaSwgYSwgYikgZm9yIChpbnQgaT1hOyBpPChiKTsgaSsrKQojZGVmaW5lIEYwUihpLCBhKSBGT1IoaSwgMCwgYSkKI2RlZmluZSBST0YoaSwgYSwgYikgZm9yIChpbnQgaSA9IChhKTsgaSA+PSAoYik7IC0taSkKI2RlZmluZSBSMEYoaSwgYSkgUk9GKGksIGEsIDApCiNkZWZpbmUgdHJhdihhLHgpIGZvciAoYXV0byYgYSA6IHgpCgojZGVmaW5lIHN6KHgpIChpbnQpKHgpLnNpemUoKQojZGVmaW5lIG1wIG1ha2VfcGFpcgojZGVmaW5lIHBiIHB1c2hfYmFjawojZGVmaW5lIGYgZmlyc3QKI2RlZmluZSBzIHNlY29uZAojZGVmaW5lIGFsbCh4KSB4LmJlZ2luKCksIHguZW5kKCkKI2RlZmluZSBpbnMgaW5zZXJ0ICAKI2RlZmluZSBlbmRsICdcbicKCmNvbnN0IGludCBtYXhuID0gMWU1KzU7CmNvbnN0IGludCBtb2QgPSAxZTcrNjsKCnZvaWQgc29sdmUoKSB7CiAgICBpbnQgbjsgY2luID4+IG47CiAgICBpbnQgeCA9IDA7CiAgICBGMFIoaSwgbikgewogICAgICAgIHggKz0gaTsKICAgIH0KICAgIGNvdXQgPDwgeCA8PCBlbmRsOwp9CgppbnQgbWFpbigpIHsKICAgIGlvc19iYXNlOjpzeW5jX3dpdGhfc3RkaW8oMCk7CiAgICBjaW4udGllKG51bGxwdHIpOwoKICAgIC8vIGZyZW9wZW4oImZpbGVuYW1lLmluIiwgInIiLCBzdGRpbik7CiAgICAvLyBmcmVvcGVuKCJmaWxlbmFtZS5vdXQiLCAidyIsIHN0ZG91dCk7CgogICAgLy8gaW50IFQ7CiAgICAvLyBjaW4gPj4gVDsKICAgIC8vIHdoaWxlKFQtLSkgewogICAgLy8gICAgIHNvbHZlKCk7CiAgICAvLyB9CgogICAgc29sdmUoKTsKfQAAAAAAAAAArgMAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAjQEAAAAAAACNAQAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"contents": "\n10\n\n45\n\n",
+			"settings":
+			{
+				"buffer_size": 9,
+				"line_ending": "Windows",
+				"name": "communication-satellite.cpp -run",
+				"read_only": true,
+				"scratch": true
+			},
+			"undo_stack":
+			[
+				[
+					1,
+					1,
+					"test_manager",
+					{
+						"action": "make_opd",
+						"build_sys": "source.c++",
+						"clr_tests": false,
+						"code_view_id": 27,
+						"run_file": "C:\\Users\\rayxh\\Documents\\competitive-programming\\CS211\\week11\\communication-satellite.cpp",
+						"sync_out": true,
+						"use_debugger": false
+					},
+					"AQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					4,
+					1,
+					"test_manager",
+					{
+						"action": "insert_opd_input",
+						"text": "10\n"
+					},
+					"AQAAAAEAAAAAAAAABAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					6,
+					1,
+					"test_manager",
+					{
+						"action": "insert_opd_out",
+						"text": "4"
+					},
+					"AQAAAAQAAAAAAAAABQAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					8,
+					1,
+					"test_manager",
+					{
+						"action": "insert_opd_out",
+						"text": "5\n"
+					},
+					"AQAAAAUAAAAAAAAABwAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAABQAAAAAAAAAFAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					10,
+					1,
+					"test_manager",
+					{
+						"action": "replace",
+						"region":
+						[
+							1,
+							7
+						],
+						"text": "10\n\n45\n\n"
+					},
+					"AQAAAAEAAAAAAAAACQAAAAAAAAAGAAAAMTAKNDUK",
+					"AQAAAAAAAAABAAAABwAAAAAAAAAHAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		}
+	],
+	"build_system": "Packages/User/C++ Debug.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C++ Debug.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++ Debug.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/C++ Debug.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C++(MSYS2).sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++(MSYS2).sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		]
+	],
+	"build_varint": "Run",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"list packages",
+				"Package Control: List Packages"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remove pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"list pa",
+				"Package Control: List Available Libraries"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"remove packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"open debugg",
+				"Debugger: Open"
+			],
+			[
+				"add confi",
+				"Debugger: Add Configuration"
+			],
+			[
+				"install ada",
+				"Debugger: Install Adapters"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"fastolympic",
+				"FastOlympicCoding: Open Settings"
+			],
+			[
+				"debugger ",
+				"Preferences: Debugger Settings"
+			],
+			[
+				"preferences key",
+				"Preferences: Key Bindings"
+			],
+			[
+				"install adapters",
+				"Debugger: Install Adapters"
+			],
+			[
+				"break",
+				"Debugger: Add Function Breakpoint"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"package control remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"package control insta",
+				"Package Control: Install Package"
+			],
+			[
+				"settings",
+				"FastOlympicCoding: Open Settings"
+			],
+			[
+				"package settings",
+				"Preferences: Package Control Settings"
+			],
+			[
+				"fastoly",
+				"FastOlympicCoding: Auto"
+			],
+			[
+				"package control",
+				"Package Control: List Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"package ",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 255.0,
+		"history":
+		[
+			"gdb --version",
+			"sublime.log_commands(False)",
+			"console.log_commands(False)",
+			"consol.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(true)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/rayxh/Documents/competitive-programming",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week11"
+	],
+	"file_history":
+	[
+		"/C/Users/rayxh/Documents/competitive-programming/cp.sublime-project",
+		"/C/Users/rayxh/AppData/Roaming/Sublime Text/Packages/User/C++ Debug.sublime-build",
+		"/C/Users/rayxh/Documents/competitive-programming/cpp-work.sublime-project",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week11/communication-satellite.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/cpp-work.sublime-workspace",
+		"/C/Users/rayxh/AppData/Roaming/Sublime Text/Packages/User/C++.sublime-settings",
+		"/C/Users/rayxh/AppData/Roaming/Sublime Text/Packages/User/CppDebug.sublime-settings",
+		"/C/Users/rayxh/AppData/Roaming/Sublime Text/Packages/User/C++(MSYS2).sublime-build",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week11/chatter.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week10/grapevine.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week10/build-dependencies.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/references/topo-sort.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/references/dijkstra.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week10/rock-climbing.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/tmp.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/tmp",
+		"/C/Users/rayxh/Documents/competitive-programming/CPU/ecna-prep/D.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week8/spiderman.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week9/island-buses.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week9/rafting-trip.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week10/flood-it.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week9/terraces.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CF/A.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CF/B.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CF/C.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CF/D.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CF/E.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CF/G.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CF/F.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CPU/ecna-prep/I.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week8/keyboards-in-concert.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CPU/ecna-prep/E.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week9/dominos.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week7/counting-subsequences.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week7/sound-of-silence.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CPU/naq-2025/D.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CPU/naq-2025/B.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CPU/naq-2025/F.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CPU/naq-2025/L.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CPU/naq-2025/K.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CPU/naq-2025/J.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CPU/naq-2025/A.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CPU/naq-2025/C.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CPU/naq-2025/I.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CPU/naq-2025/E.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week7/fruit-baskets.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week6/cracker-barrel-game.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week6/exact-change.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week6/weight-tomes.cpp",
+		"/C/Users/rayxh/Documents/competitive-programming/CS211/week7/firefly.cpp",
+		"/C/Users/rayxh/Documents/USACO/CPU/naq-prep/sky-limit.cpp",
+		"/C/Users/rayxh/Documents/USACO/CPU/naq-prep/color-walk.cpp",
+		"/C/Users/rayxh/Documents/USACO/CPU/naq-prep/y-vowel.cpp",
+		"/C/Users/rayxh/Documents/USACO/CPU/naq-prep/classfieldtrip.cpp",
+		"/C/Users/rayxh/Documents/USACO/CPU/naq-prep/metronome.cpp",
+		"/C/Users/rayxh/Documents/USACO/CPU/naq-prep/contest-advancement.cpp",
+		"/C/Users/rayxh/Documents/USACO/tmp.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week6/weight-tomes.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week4/batmanacci.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week5/svada.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week5/fence-bowling.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week5/circular-caramel-cookie.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week6/increasing-subsequence.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week6/exact-change.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week5/ljutnja.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week4/guess-the-number.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week4/out-of-sorts.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week4/frosh-week.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week3/zigzag2.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week3/the-trip2.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week3/marathon2.cpp",
+		"/C/Users/rayxh/Documents/USACO/clean.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week3/zigzag.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week3/sla-tomography2.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week2/lektira2.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week2/restaurant2.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week2/adding-words2.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week2/dance-recital2.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week2/adding-words.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week3/marathon.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week3/sla-tomography.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week3/the-trip.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week2/lektira.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week3/two-city-scheduling.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week2/dance-recital.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week2/restaurant.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week1/image-decoding2.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week1/thanos2.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week1/permutation-encryption2.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week1/join-strings2.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week1/thanos.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week1/permutation-encryption.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week1/image-decoding.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/week2/cities-and-states.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/join-strings.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/permutation-encryption.cpp",
+		"/C/Users/rayxh/Documents/USACO/CS211/image-decoding.cpp",
+		"/C/Users/rayxh/OneDrive/Desktop/USACO/USACO/tmp.cpp",
+		"/C/Users/rayxh/OneDrive/Desktop/USACO/template.cpp",
+		"/C/Users/rayxh/OneDrive/Desktop/USACO/USACO/silver/bovine-acrobatics-dec-2023.cpp"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 163.428573608,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "CS211/week11/communication-satellite.cpp",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 942,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								397,
+								397
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 161.714285714,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9,
+								9
+							]
+						],
+						"settings":
+						{
+							"delete_forb": true,
+							"edit_mode": false,
+							"fold_buttons": false,
+							"line_numbers": false,
+							"syntax": "Packages/CppFastOlympicCoding/TestSyntax.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 43.4285714286
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.68,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 286.0,
+		"history":
+		[
+			"10",
+			"1",
+			"6\nlvable\n",
+			"6\ngoogle\n",
+			"7\nlovable\n",
+			"6\nlvable\n",
+			"6\ngoogle\n",
+			"\n7\nlovable\n"
+		]
+	},
+	"output.find_results":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"pinned_build_system": "",
+	"project": "cp.sublime-project",
+	"replace":
+	{
+		"height": 52.5714285714
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 274.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
