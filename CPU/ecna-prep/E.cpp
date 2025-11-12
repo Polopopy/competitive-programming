@@ -22,12 +22,37 @@ typedef unsigned long long ull;
 #define ins insert
 #define endl '\n'
 
-const int maxn = 1e5+5;
-const int inf = 2e9+2;
-const int mod = 1e7+6;
+const int maxn = 100+5;
+const int inf = 1e9+2;
+const int mod = 2e9;
+
+vector<vector<ll>> adj(maxn);
+
+void gen(vector<pair<ll, ll>>& curr) {
+    map<ll, ll> td;
+    trav(x, curr) {
+        trav(y, adj[x.f]) td[y] += x.s;
+    }
+    curr.clear();
+    trav(x, td) curr.pb(x);
+}
 
 void solve() {
-    
+    ll n, m, s, t;
+    cin >> n >> m >> s >> t;
+    F0R(i, m) {
+        ll a, b; cin >> a >> b;
+        adj[a].pb(b);
+        adj[b].pb(a);
+    }
+
+    vector<pair<ll, ll>> curr = {{s, 1}};
+
+    F0R(i, t) gen(curr);
+
+    ll ans = 0;
+    trav(x, curr) ans += x.s;
+    cout << ans << endl;
 }
 
 int main() {

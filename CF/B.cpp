@@ -23,11 +23,29 @@ typedef unsigned long long ull;
 #define endl '\n'
 
 const int maxn = 1e5+5;
-const int inf = 2e9+2;
-const int mod = 1e7+6;
+const int inf = 1e9+2;
+const int mod = 2e9;
 
 void solve() {
-    
+    int n; cin >> n;
+    string a, b;
+    cin >> a >> b;
+    map<char, int> x;
+    x.clear();
+    bool ans = true;
+    trav(c, a) {
+        x[c]++;
+    }
+
+    trav(c, b) {
+        x[c]--;
+        if(x[c] < 0) {
+            ans = false;
+            break;
+        }
+    }
+
+    cout << (ans? "YES":"NO") << endl;
 }
 
 int main() {
@@ -37,11 +55,11 @@ int main() {
     // freopen("filename.in", "r", stdin);
     // freopen("filename.out", "w", stdout);
 
-    // int T;
-    // cin >> T;
-    // while(T--) {
-    //     solve();
-    // }
+    int T;
+    cin >> T;
+    while(T--) {
+        solve();
+    }
 
-    solve();
+    // solve();
 }

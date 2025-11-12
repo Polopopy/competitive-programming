@@ -22,26 +22,49 @@ typedef unsigned long long ull;
 #define ins insert
 #define endl '\n'
 
-const int maxn = 1e5+5;
-const int inf = 2e9+2;
-const int mod = 1e7+6;
+const int maxn = 1e6+5;
+const int inf = 1e9+2;
+const int mod = 2e9;
+
+vector<int> x(maxn);
 
 void solve() {
-    
+    int n, m, c; cin >> n >> m >> c;
+    F0R(i, n) cin >> x[i];
+
+    vector<int> ans;
+    multiset<int> ms;
+
+    F0R(i, m) ms.insert(x[i]);
+    if(*ms.rbegin()-*ms.begin() <= c) ans.pb(1);
+
+    FOR(i, m, n) {
+        ms.insert(x[i]);
+        ms.erase(ms.find(x[i - m]));
+        if(*ms.rbegin()-*ms.begin() <= c) ans.pb(i-m+2);
+    }
+
+    if(ans.empty()) {
+        cout << "NONE" << endl;
+    } else {
+        trav(x, ans) cout << x << endl;
+    }
 }
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(nullptr);
 
-    // freopen("filename.in", "r", stdin);
-    // freopen("filename.out", "w", stdout);
+    // freopen("fname.in", "r", stdin);
+    // freopen("fname.out", "w", stdout);
 
     // int T;
     // cin >> T;
     // while(T--) {
-    //     solve();
+    //    solve();
     // }
 
     solve();
+
+    return 0;
 }

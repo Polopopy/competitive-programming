@@ -23,25 +23,44 @@ typedef unsigned long long ull;
 #define endl '\n'
 
 const int maxn = 1e5+5;
-const int inf = 2e9+2;
-const int mod = 1e7+6;
+const int inf = 1e9+2;
+const int mod = 2e9;
 
 void solve() {
-    
+    string s; cin >> s;
+    string ans = string(50, 'z');
+    int n = s.length();
+
+    FOR(i, 1, n) {
+        FOR(j, i+1, n) {
+            string a = s.substr(0, i);
+            string b = s.substr(i, (j-i));
+            string c = s.substr(j, (n-j));
+
+            reverse(all(a));
+            reverse(all(b));
+            reverse(all(c));
+
+            ans = min(ans, a+b+c);
+        }
+    }
+    cout << ans << endl;
 }
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(nullptr);
 
-    // freopen("filename.in", "r", stdin);
-    // freopen("filename.out", "w", stdout);
+    // freopen("fname.in", "r", stdin);
+    // freopen("fname.out", "w", stdout);
 
     // int T;
     // cin >> T;
     // while(T--) {
-    //     solve();
+    //    solve();
     // }
 
     solve();
+
+    return 0;
 }

@@ -22,12 +22,24 @@ typedef unsigned long long ull;
 #define ins insert
 #define endl '\n'
 
-const int maxn = 1e5+5;
-const int inf = 2e9+2;
-const int mod = 1e7+6;
+const int maxd = 1e5+5;
+const int inf = 1e9+2;
+const int mod = 2e9;
 
 void solve() {
-    
+    int n; cin >> n;
+    vector<int> x(n);
+    map<int, vector<int>> s;
+    s[0].pb(0);
+    int tmp = 0, ans = 0;
+    F0R(i, n) {
+        cin >> x[i];
+        tmp += x[i];
+        if(s.find(tmp-47) != s.end()) ans += sz(s[tmp-47]);
+        s[tmp].pb(i);
+    }
+
+    cout << ans << endl;
 }
 
 int main() {
@@ -37,11 +49,11 @@ int main() {
     // freopen("filename.in", "r", stdin);
     // freopen("filename.out", "w", stdout);
 
-    // int T;
-    // cin >> T;
-    // while(T--) {
-    //     solve();
-    // }
+    int T;
+    cin >> T;
+    while(T--) {
+        solve();
+    }
 
-    solve();
+    // solve();
 }

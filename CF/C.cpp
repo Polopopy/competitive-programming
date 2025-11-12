@@ -23,11 +23,29 @@ typedef unsigned long long ull;
 #define endl '\n'
 
 const int maxn = 1e5+5;
-const int inf = 2e9+2;
-const int mod = 1e7+6;
+const int inf = 1e9+2;
+const int mod = 2e9;
 
 void solve() {
-    
+    int n; cin >> n;
+    vector<int> x(n);
+    bool yay = false, odd = false;
+    F0R(i, n) {
+        cin >> x[i];
+        if(i == 0) {
+            odd = x[i]%2==1;
+        } else {
+            if(!yay && (odd && x[i]%2 == 0) || (!odd && x[i]%2 == 1)) {
+                yay = true;
+            }
+        }
+    }
+
+    if(yay) sort(all(x));
+
+    trav(a, x) cout << a << ' ';
+    cout << endl;
+
 }
 
 int main() {
@@ -37,11 +55,11 @@ int main() {
     // freopen("filename.in", "r", stdin);
     // freopen("filename.out", "w", stdout);
 
-    // int T;
-    // cin >> T;
-    // while(T--) {
-    //     solve();
-    // }
+    int T;
+    cin >> T;
+    while(T--) {
+        solve();
+    }
 
-    solve();
+    // solve();
 }

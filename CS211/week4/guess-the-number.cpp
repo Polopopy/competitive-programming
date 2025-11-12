@@ -20,28 +20,42 @@ typedef unsigned long long ull;
 #define s second
 #define all(x) x.begin(), x.end()
 #define ins insert
-#define endl '\n'
+// #define endl '\n'
 
 const int maxn = 1e5+5;
-const int inf = 2e9+2;
-const int mod = 1e7+6;
+const int inf = 1e9+2;
+const int mod = 2e9;
+
+int lo = 1, hi = 1000;
 
 void solve() {
-    
+    cout << lo+(hi-lo)/2 << endl;
+    string res;
+    while(cin >> res && res != "correct") {
+        int mid = lo+(hi-lo)/2;
+        if(res == "lower") {
+            hi = mid-1;
+        } else {
+            lo = mid+1;
+        }
+        cout << lo+(hi-lo)/2 << endl;
+    }
 }
 
 int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(nullptr);
+    // ios_base::sync_with_stdio(0);
+    // cin.tie(nullptr);
 
-    // freopen("filename.in", "r", stdin);
-    // freopen("filename.out", "w", stdout);
+    // freopen("fname.in", "r", stdin);
+    // freopen("fname.out", "w", stdout);
 
     // int T;
     // cin >> T;
     // while(T--) {
-    //     solve();
+    //    solve();
     // }
 
     solve();
+
+    return 0;
 }

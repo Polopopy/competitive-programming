@@ -22,26 +22,47 @@ typedef unsigned long long ull;
 #define ins insert
 #define endl '\n'
 
-const int maxn = 1e5+5;
-const int inf = 2e9+2;
-const int mod = 1e7+6;
+const int maxn = 4e5+5;
+const int inf = 1e9+2;
+const int mod = 2e9;
+
+int n;
+vector<ll> dp(maxn);
 
 void solve() {
-    
+    cin >> n;
+    dp[0] = 1;
+    ll ans = 0;
+    F0R(i, n) {
+        ll x; cin >> x;
+        ROF(j, 4e5, x) {
+            if(dp[j-x] > 0) {
+                dp[j] += dp[j-x];
+            }
+        }
+    }
+
+    FOR(i, 200, 4e5) {
+        if(dp[i] > 0) ans += i*dp[i];
+    }
+
+    cout << ans << endl;
 }
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(nullptr);
 
-    // freopen("filename.in", "r", stdin);
-    // freopen("filename.out", "w", stdout);
+    // freopen("fname.in", "r", stdin);
+    // freopen("fname.out", "w", stdout);
 
     // int T;
     // cin >> T;
     // while(T--) {
-    //     solve();
+    //    solve();
     // }
 
     solve();
+
+    return 0;
 }

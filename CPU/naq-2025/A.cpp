@@ -23,25 +23,48 @@ typedef unsigned long long ull;
 #define endl '\n'
 
 const int maxn = 1e5+5;
-const int inf = 2e9+2;
-const int mod = 1e7+6;
+const int inf = 1e9+2;
+const int mod = 2e9;
 
 void solve() {
-    
+    vector<int> rgb(3), ccc(3);
+    int x, y;
+    F0R(i, 3) cin >> rgb[i];
+    F0R(i, 3) cin >> ccc[i];
+    cin >> x >> y;
+
+    int a = max(0, rgb[0]-ccc[0]);
+    int b = max(0, rgb[1]-ccc[1]);
+    int c = max(0, rgb[2]-ccc[2]);
+
+    x -= a;
+    y -= c;
+
+    if(x < 0 || y < 0) {
+        cout << -1 << endl;
+    } else {
+        if(b <= x+y) {
+            cout << a+b+c << endl;
+        } else {
+            cout << -1 << endl;
+        }
+    }
 }
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(nullptr);
 
-    // freopen("filename.in", "r", stdin);
-    // freopen("filename.out", "w", stdout);
+    // freopen("fname.in", "r", stdin);
+    // freopen("fname.out", "w", stdout);
 
     // int T;
     // cin >> T;
     // while(T--) {
-    //     solve();
+    //    solve();
     // }
 
     solve();
+
+    return 0;
 }

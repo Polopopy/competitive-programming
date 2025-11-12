@@ -23,25 +23,49 @@ typedef unsigned long long ull;
 #define endl '\n'
 
 const int maxn = 1e5+5;
-const int inf = 2e9+2;
-const int mod = 1e7+6;
+const int inf = 1e9+2;
+const int mod = 2e9;
 
 void solve() {
-    
+    int n, k, c;
+    cin >> n >> k >> c;
+
+    vector<pair<int, int>> x(n);
+    map<int, int> sc;
+    vector<bool> p(n);
+
+    int tmp = 0;
+
+    F0R(i, n) {
+        cin >> x[i].f >> x[i].s;
+        if(sc[x[i].s] < c) {
+            sc[x[i].s]++;
+            p[i] = true;
+            tmp++;
+        }
+        if(tmp >= k) break;
+    }
+
+    if(tmp < k) {
+        F0R(i, n) {
+            if(!p[i]) {
+                p[i] = true;
+                tmp++;
+            }
+            if(tmp >= k) break;
+        }
+    }
+
+    F0R(i, n) {
+        if(p[i]) cout << x[i].f << endl;
+    }
 }
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(nullptr);
 
-    // freopen("filename.in", "r", stdin);
-    // freopen("filename.out", "w", stdout);
-
-    // int T;
-    // cin >> T;
-    // while(T--) {
-    //     solve();
-    // }
-
     solve();
+
+    return 0;
 }

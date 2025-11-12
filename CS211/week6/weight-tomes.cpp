@@ -23,25 +23,50 @@ typedef unsigned long long ull;
 #define endl '\n'
 
 const int maxn = 1e5+5;
-const int inf = 2e9+2;
-const int mod = 1e7+6;
+const int inf = 1e9+2;
+const int mod = 2e9;
+
+vector<vector<int>> dp(21, vector<int>(5005));
 
 void solve() {
-    
+   int n, m; cin >> n >> m;
+
+   FOR(i, 1, m+1) {
+      FOR(j, 1, n+1) {
+         dp[i][j] = dp[i-1][j-1] + dp[i][j-1] + 1;
+      }
+   }
+
+   int ans = 0, lo = 0, hi = 0;
+
+   FOR(i, 1, n+1) {
+      if(dp[m][i] >= n) {
+         ans = i;
+         lo = n - dp[m][i-1];
+         hi = dp[m-1][i-1]+1;
+         break;
+      }
+   }
+
+   cout << ans << ' ';
+   if(lo == hi) cout << lo << endl;
+   else cout << lo << '-' << hi << endl;
 }
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(nullptr);
 
-    // freopen("filename.in", "r", stdin);
-    // freopen("filename.out", "w", stdout);
+    // freopen("fname.in", "r", stdin);
+    // freopen("fname.out", "w", stdout);
 
     // int T;
     // cin >> T;
     // while(T--) {
-    //     solve();
+    //    solve();
     // }
 
     solve();
+
+    return 0;
 }

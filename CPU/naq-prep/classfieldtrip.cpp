@@ -23,25 +23,40 @@ typedef unsigned long long ull;
 #define endl '\n'
 
 const int maxn = 1e5+5;
-const int inf = 2e9+2;
-const int mod = 1e7+6;
+const int inf = 1e9+2;
+const int mod = 2e9;
 
 void solve() {
-    
+    string a, b; cin >> a >> b;
+    int i = 0, j = 0, n = a.length(), m = b.length();
+    string ret = "";
+    while(i < n && j < m) {
+        if(a[i] < b[j]) {
+            ret += a[i];
+            i++;
+        } else {
+            ret += b[j];
+            j++;
+        }
+    }
+
+    while(i < n) {
+        ret += a[i];
+        i++;
+    }
+    while(j < m) {
+        ret += b[j];
+        j++;
+    }
+
+    cout << ret << endl;
 }
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(nullptr);
 
-    // freopen("filename.in", "r", stdin);
-    // freopen("filename.out", "w", stdout);
-
-    // int T;
-    // cin >> T;
-    // while(T--) {
-    //     solve();
-    // }
-
     solve();
+
+    return 0;
 }

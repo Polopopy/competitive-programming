@@ -7,9 +7,9 @@ typedef long long ll;
 typedef long double ld;
 typedef unsigned long long ull;
 
-#define FOR(i, a, b) for (int i=a; i<(b); i++)
+#define FOR(i, a, b) for (ll i=a; i<(b); i++)
 #define F0R(i, a) FOR(i, 0, a)
-#define ROF(i, a, b) for (int i = (a); i >= (b); --i)
+#define ROF(i, a, b) for (ll i = (a); i >= (b); --i)
 #define R0F(i, a) ROF(i, a, 0)
 #define trav(a,x) for (auto& a : x)
 
@@ -23,11 +23,30 @@ typedef unsigned long long ull;
 #define endl '\n'
 
 const int maxn = 1e5+5;
-const int inf = 2e9+2;
-const int mod = 1e7+6;
+const int inf = 1e9+2;
+const int mod = 2e9;
 
 void solve() {
-    
+    ll n; cin >> n;
+    ll m = 1e18;
+    vector<ll> a(n);
+    F0R(i, n) {
+        cin >> a[i];
+        m = min(m, a[i]);
+    }
+
+    ll ans = -1;
+    FOR(i, 2, 1e18) {
+        trav(x, a) {
+            if(gcd(x, i) == 1) {
+                ans = i;
+                break;
+            }
+        }
+        if(ans != -1) break;
+    }
+
+    cout << ans << endl;
 }
 
 int main() {
@@ -37,11 +56,11 @@ int main() {
     // freopen("filename.in", "r", stdin);
     // freopen("filename.out", "w", stdout);
 
-    // int T;
-    // cin >> T;
-    // while(T--) {
-    //     solve();
-    // }
+    int T;
+    cin >> T;
+    while(T--) {
+        solve();
+    }
 
-    solve();
+    // solve();
 }

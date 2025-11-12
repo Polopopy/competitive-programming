@@ -27,24 +27,29 @@ const int inf = 1e9+2;
 const int mod = 2e9;
 
 void solve() {
-	
+    int n, k; cin >> n >> k;
+    unordered_set<int> diff;
+    F0R(i, n) {
+        int x; cin >> x;
+        diff.insert(x);
+    }
+    cout << min(k, sz(diff)) << endl;
 }
 
 int main() {
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-	cout.tie(0);
+    ios_base::sync_with_stdio(0);
+    cin.tie(nullptr);
 
-	// freopen("fname.in", "r", stdin);
-	// freopen("fname.out", "w", stdout);
+    // freopen("fname.in", "r", stdin);
+    // freopen("fname.out", "w", stdout);
 
-	// int T;
-	// cin >> T;
-	// while(T--) {
-	//    solve();
-	// }
+    // int T;
+    // cin >> T;
+    // while(T--) {
+    //    solve();
+    // }
 
-	solve();
+    solve();
 
-	return 0;
+    return 0;
 }

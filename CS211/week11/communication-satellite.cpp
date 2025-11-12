@@ -19,15 +19,19 @@ typedef unsigned long long ull;
 #define f first
 #define s second
 #define all(x) x.begin(), x.end()
-#define ins insert
+#define ins insert  
 #define endl '\n'
 
 const int maxn = 1e5+5;
-const int inf = 2e9+2;
 const int mod = 1e7+6;
 
 void solve() {
-    
+    int n; cin >> n;
+    int x = 0;
+    F0R(i, n) {
+        x += i;
+    }
+    cout << x << endl;
 }
 
 int main() {
