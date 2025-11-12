@@ -26,31 +26,26 @@ const int maxn = 1e5+5;
 const int inf = 2e9+2;
 const int mod = 1e7+6;
 
-vector<int> dijkstra(int n, const vector<vector<pair<int,int>>>& g, int s){
-    vector<int> d(n, inf);
-    priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
-    d[s]=0; pq.emplace(0,s);
-    while(!pq.empty()){
-        auto [du,u]=pq.top(); pq.pop();
-        if(du!=d[u]) continue;
-        for(auto &e: g[u]){
-            int v=e.f; int w=e.s;
-            if(d[u]+w<d[v]){ d[v]=d[u]+w; pq.emplace(d[v],v); }
-        }
+struct DSU {
+    vector<int> p, sz;
+    DSU(int n=0){ init(n); }
+    void init(int n){ p.resize(n); sz.assign(n,1); F0R(i,n) p[i]=i; }
+    int find(int x){
+        while(p[x]!=x){ p[x]=p[p[x]]; x=p[x]; }
+        return x;
     }
-    return d;
-}
+    bool unite(int a,int b){
+        a=find(a); b=find(b);
+        if(a==b) return false;
+        if(sz[a]<sz[b]) swap(a,b);
+        p[b]=a; sz[a]+=sz[b];
+        return true;
+    }
+};
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(nullptr);
+    
 
-    // freopen("filename.in", "r", stdin);
-    // freopen("filename.out", "w", stdout);
-
-    // int T;
-    // cin >> T;
-    // while(T--) {
-    //     solve();
-    // }
 }

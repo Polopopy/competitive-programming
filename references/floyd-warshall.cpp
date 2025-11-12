@@ -26,19 +26,10 @@ const int maxn = 1e5+5;
 const int inf = 2e9+2;
 const int mod = 1e7+6;
 
-vector<int> dijkstra(int n, const vector<vector<pair<int,int>>>& g, int s){
-    vector<int> d(n, inf);
-    priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
-    d[s]=0; pq.emplace(0,s);
-    while(!pq.empty()){
-        auto [du,u]=pq.top(); pq.pop();
-        if(du!=d[u]) continue;
-        for(auto &e: g[u]){
-            int v=e.f; int w=e.s;
-            if(d[u]+w<d[v]){ d[v]=d[u]+w; pq.emplace(d[v],v); }
-        }
-    }
-    return d;
+void floyd_warshall(vector<vector<int>>& d){
+    int n = sz(d);
+    F0R(k,n) F0R(i,n) if (d[i][k] < inf) F0R(j,n) if (d[k][j] < inf)
+        d[i][j] = min(d[i][j], d[i][k] + d[k][j]);
 }
 
 int main() {

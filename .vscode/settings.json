@@ -37,6 +37,7 @@
         "regex": "cpp",
         "map": "cpp",
         "vector": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "iomanip": "cpp"
     }
 }

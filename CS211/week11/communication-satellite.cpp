@@ -25,13 +25,47 @@ typedef unsigned long long ull;
 const int maxn = 1e5+5;
 const int mod = 1e7+6;
 
+double mst_prim(int n, const vector<vector<pair<int,double>>>& g) {
+    vector<bool> vis(n, 0);
+    priority_queue<pair<double,int>, vector<pair<double,int>>, greater<pair<double,int>>> pq;
+    pq.push({0.0, 0});
+    double sum = 0;
+    int cnt = 0;
+     while (!pq.empty()) {
+        auto [w, u] = pq.top(); pq.pop();
+        if (vis[u]) continue;
+        vis[u] = 1; sum += w; ++cnt;
+        for (auto &e : g[u]) if (!vis[e.first]) pq.push({e.second, e.first});
+    }
+    return (cnt == n) ? sum : -1;
+}
+
 void solve() {
     int n; cin >> n;
-    int x = 0;
+    vector<int> rs(n);
+    vector<pair<double,double>> pos(n);
+    vector<vector<pair<int,double>>> g(n);
+
     F0R(i, n) {
-        x += i;
+        int a, b, r;
+        cin >> a >> b >> r;
+        pos[i] = {a,b};
+        rs[i] = r;
     }
-    cout << x << endl;
+
+    F0R(i, n) {
+        F0R(j, n) {
+            if(i == j) continue;
+            double dist = sqrt(pow(pos[i].f-pos[j].f,2)+pow(pos[i].s-pos[j].s,2));
+            dist -= rs[i];
+            dist -= rs[j];
+            g[i].pb({j, dist});
+            g[j].pb({i, dist});
+        }
+    }
+
+    double ans = mst_prim(n, g);
+    cout << fixed << setprecision(8) << ans << endl;
 }
 
 int main() {
