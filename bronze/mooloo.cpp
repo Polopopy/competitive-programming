@@ -24,10 +24,23 @@ typedef unsigned long long ull;
 
 const int maxn = 1e5+5;
 const int inf = 2e9+2;
-const int mod = 1e9+7;
+const int mod = 1e7+6;
 
 void solve() {
-    
+    ll n, k;
+    cin >> n >> k;
+    vector<ll> x(n);
+    F0R(i, n) cin >> x[i];
+
+    ll ans = k+1;
+    FOR(i, 1, n) {
+        if(x[i]-x[i-1] > k) {
+            ans += k+1;
+        } else {
+            ans += x[i]-x[i-1];
+        }
+    }
+    cout << ans << endl;
 }
 
 int main() {
@@ -37,11 +50,11 @@ int main() {
     // freopen("filename.in", "r", stdin);
     // freopen("filename.out", "w", stdout);
 
-    int T;
-    cin >> T;
-    while(T--) {
-        solve();
-    }
+    // int T;
+    // cin >> T;
+    // while(T--) {
+    //     solve();
+    // }
 
-    // solve();
+    solve();
 }

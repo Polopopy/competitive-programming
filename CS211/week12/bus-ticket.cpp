@@ -24,10 +24,20 @@ typedef unsigned long long ull;
 
 const int maxn = 1e5+5;
 const int inf = 2e9+2;
-const int mod = 1e9+7;
+const int mod = 1e7+6;
 
 void solve() {
-    
+    ll s, p, m, n;
+    cin >> s >> p >> m >> n;
+    vector<ll> rides(n+1), dp(n+1, inf);
+    FOR(i, 1, n+1) cin >> rides[i];
+
+    dp[0] = 0;
+    FOR(i, 1, n+1) {
+        auto prev = --upper_bound(rides.begin()+1, rides.end(), rides[i]-m);
+        dp[i] = min(dp[i-1]+s, dp[prev-rides.begin()]+p);
+    }
+    cout << dp[n] << endl;
 }
 
 int main() {
@@ -37,11 +47,11 @@ int main() {
     // freopen("filename.in", "r", stdin);
     // freopen("filename.out", "w", stdout);
 
-    int T;
-    cin >> T;
-    while(T--) {
-        solve();
-    }
+    // int T;
+    // cin >> T;
+    // while(T--) {
+    //     solve();
+    // }
 
-    // solve();
+    solve();
 }

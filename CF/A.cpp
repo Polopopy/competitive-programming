@@ -27,13 +27,15 @@ const int inf = 1e9+2;
 const int mod = 2e9;
 
 void solve() {
-    int a, b, c, d;
-    cin >> a >> b >> c >> d;
-    if(a == b && b == c && c == d) {
-        cout << "YES" << endl;
-    } else {
-        cout << "NO" << endl;
+    int n; cin >> n;
+    int ans = 0;
+    F0R(i, n/2+1) {
+        if((n-2*i) % 4 == 0) {
+            ans++;
+        }
     }
+
+    cout << ans << endl;
 }
 
 int main() {
