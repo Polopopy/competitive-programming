@@ -27,26 +27,7 @@ const int inf = 1e9+2;
 const int mod = 2e9;
 
 void solve() {
-    ll n; cin >> n;
-    ll m = 1e18;
-    vector<ll> a(n);
-    F0R(i, n) {
-        cin >> a[i];
-        m = min(m, a[i]);
-    }
-
-    ll ans = -1;
-    FOR(i, 2, 1e18) {
-        trav(x, a) {
-            if(gcd(x, i) == 1) {
-                ans = i;
-                break;
-            }
-        }
-        if(ans != -1) break;
-    }
-
-    cout << ans << endl;
+    
 }
 
 int main() {

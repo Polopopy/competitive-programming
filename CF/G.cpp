@@ -26,36 +26,8 @@ const int maxn = 1e5+5;
 const int inf = 1e9+2;
 const int mod = 2e9;
 
-struct FT {
-    int n; vector<ll> b;
-    FT(int n=0): n(n), b(n+1,0) {}
-    void u(int i, ll v){ for(; i<=n; i+=i&-i) b[i] = max(b[i], v); }
-    ll q(int i){ ll r=0; for(; i; i-=i&-i) r = max(r, b[i]); return r; }
-};
-
 void solve() {
-    int n; cin >> n;
-    vector<ll> a(n), c(n);
-    F0R(i, n) cin >> a[i];
-    F0R(i, n) cin >> c[i];
-
-    vector<ll> v = a;
-    sort(all(v));
-    v.erase(unique(all(v)), v.end());
-
-    auto x = [&](ll x){ return int(lower_bound(all(v), x)-v.begin())+1; };
-
-    FT ft(sz(v));
-    ll t = 0, m = 0;
-    F0R(i,n){
-        t += c[i];
-        int r = x(a[i]);
-        ll d = c[i] + ft.q(r);
-        m = max(m, d);
-        ft.u(r, d);
-    }
     
-    cout << (t-m) << endl;
 }
 
 int main() {

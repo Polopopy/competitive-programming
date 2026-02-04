@@ -27,7 +27,24 @@ const int inf = 2e9+2;
 const int mod = 1e9+7;
 
 void solve() {
-    
+    int n; cin >> n;
+    vector<int> x(n);
+    int ev = 0;
+    trav(a, x) cin >> a;
+    int ans = 0;
+    unordered_map<int, int> seen;
+    F0R(i, n) {
+        trav(a, seen) {
+            if(a.f != 1 && x[i] != 1 && (a.f%x[i] == 0 || x[i]%a.f == 0)) {
+                ans += a.s;
+            }
+        }
+        ans += ev;
+        if(x[i] % 2 == 0) ev++;
+        seen[x[i]]++;
+    }
+
+    cout << ans << endl;
 }
 
 int main() {

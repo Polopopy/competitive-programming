@@ -18,7 +18,6 @@ vector<string> strings(maxn);
 // vector of pairs (index of source string, has parent)
 vector<pair<vector<int>, bool>> adj(maxn);
 
-
 // function to recursively print final string
 void output(int start, vector<pair<vector<int>, bool>>& adj, vector<string>& strings) {
 
@@ -38,6 +37,8 @@ int main() {
 
     for(int i = 0; i < n; i++) cin >> strings[i];
 
+    int tmp = -1;
+    
     // build directed graph
     for(int i = 0; i < (n-1); i++) {
         int a, b;
@@ -47,13 +48,18 @@ int main() {
 
         // mark whether b has a parent node
         adj[b].second = true;
+
+        tmp = a;
     }
 
+    output(tmp, adj, strings);
+    return 0;
+
     // find root note to begin output
-    for(int i = 0; i < n; i++) {
-        if (!adj[i].second) {
-            output(i, adj, strings);
-            return 0;
-        }
-    }
+    // for(int i = 0; i < n; i++) {
+    //     if (!adj[i].second) {
+    //         output(i, adj, strings);
+    //         return 0;
+    //     }
+    // }
 }

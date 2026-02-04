@@ -28,14 +28,15 @@ const int mod = 2e9;
 
 void solve() {
     int n; cin >> n;
-    int ans = 0;
-    F0R(i, n/2+1) {
-        if((n-2*i) % 4 == 0) {
-            ans++;
-        }
+    vector<int> h(n);
+    F0R(i, n) cin >> h[i];
+
+    sort(next(h.begin()), h.end());
+    FOR(i, 1, n) {
+        h[0] = max(h[0], (h[0]+h[i]+1)/2);
     }
 
-    cout << ans << endl;
+    cout << h[0] << endl;
 }
 
 int main() {

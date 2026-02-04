@@ -9,7 +9,16 @@ It is ok to share my code anonymously for educational purposes
 using namespace std;
 
 void solve() {
-    
+    int n, k; cin >> n >> k;
+    int ans = 1;
+    // simulate tolls
+    while(n > 0) {
+        // will need to cross this toll ceil(n/k) times
+        int rem = (n+k-1)/k;
+        ans++;
+        n -= rem;
+    }
+    cout << ans << endl;
 }
 
 int main() {
