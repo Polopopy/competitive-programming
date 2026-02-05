@@ -35,38 +35,33 @@ void solve() {
     }
 
     for(auto& p : td) {
-        auto it = active.lower_bound({p.x1, -2e9}); 
-            
+        if (p.diff == -1) {
+            auto it = active.find({p.x1, p.x2});
+            if(it != active.end()) active.erase(it);
+        }
+
+        auto it = active.lower_bound({p.x1, -2e9});
+
         if(it != active.end()) {
-            if (it->first <= p.x2) {
-                bool a = (it->first < p.x1 && it->second > p.x2);
-                bool b = (p.x1 < it->first && p.x2 > it->second);
-                
-                if (!a && !b) {
-                    ans = 1;
-                    break;
-                }
+            if (it->first < p.x2) {
+                ans = 1;
+                break;
             }
         }
 
         if(it != active.begin()) {
             auto prev_it = prev(it);
-            if (prev_it->second >= p.x1) {
-                bool p_in_prev = (prev_it->first < p.x1 && prev_it->second > p.x2);
-                bool prev_in_p = (p.x1 < prev_it->first && p.x2 > prev_it->second);
-
-                if (!p_in_prev && !prev_in_p) {
+            if (prev_it->second > p.x1) {
+                bool nested = (prev_it->first < p.x1 && prev_it->second > p.x2);
+                if (!nested) {
                     ans = 1;
                     break;
                 }
             }
         }
 
-        if(p.diff == 1) {
+        if (p.diff == 1) {
             active.insert({p.x1, p.x2});
-        } else {
-            auto it = active.find({p.x1, p.x2});
-            if(it != active.end()) active.erase(it);
         }
     }
 
