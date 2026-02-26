@@ -27,7 +27,27 @@ const int inf = 2e9+2;
 const int mod = 1e7+6;
 
 void solve() {
-    
+    int n;
+    while(cin >> n && n != 0) {
+        vector<bool> dp(12005);
+        ll sum = 0;
+        dp[0] = true;
+        F0R(i, n) {
+            int x; cin >> x;
+            sum += x;
+            ROF(j, 12004, x) {
+                if(dp[j-x]) {
+                    dp[j] = true;
+                }
+            }
+        }
+        ROF(i, sum/2, 0) {
+            if(dp[i]) {
+                cout << sum-i << ' ' << i << endl;
+                break;
+            }
+        }
+    }
 }
 
 int main() {
