@@ -13,6 +13,10 @@
  */
 #pragma once
 
+#define rep(i, a, b) for(int i = a; i < (b); ++i)
+#define sz(x) (int)(x).size()
+typedef long long ll;
+
 template<class T>
 struct RMQ {
 	vector<vector<T>> jmp;
