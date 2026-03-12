@@ -32,7 +32,7 @@ struct RMQ {
 
 void solve() {
     int T; cin >> T;
-    set<int> ans;
+    vector<int> ans;
     // for each photo, we can repeat the same process
     for(int tmp = 1; tmp <= T; ++tmp) {
         int n; cin >> n;
@@ -56,7 +56,7 @@ void solve() {
             // if the tallest person to the right is taller than left, the photo
             //   needs more analysis
             if(r > *l) {
-                ans.insert(tmp);
+                ans.push_back(tmp);
                 break;
             }
         }
