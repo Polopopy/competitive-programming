@@ -29,6 +29,7 @@ void solve() {
         double m = l + (r-l)/2;
         // n is left wall, n+1 is right wall
         vector<vector<int>> adj(n+2);
+        // build graph between sensors connected for our current m
         for(int i = 0; i < n; ++i) {
             for(int j = 0; j < i; ++j) {
                 if(sensors[i].touching(sensors[j], m)) {
@@ -36,6 +37,7 @@ void solve() {
                     adj[j].push_back(i);
                 }
             }
+            // connect to walls if they are touching by comparing distance
             if(sensors[i].x-sensors[i].r-m <= 0) {
                 adj[i].push_back(n);
                 adj[n].push_back(i);
@@ -46,6 +48,7 @@ void solve() {
             }
         }
 
+        // bfs to check if the two walls are connected
         deque<int> td;
         td.clear();
         vector<bool> visited(n+2);
@@ -59,13 +62,16 @@ void solve() {
                 failed = true;
                 break;
             }
+            // visit each connected sensor
             visited[curr] = true;
             for(auto& x : adj[curr]) {
+                // if we have reached the other wall, the path is fully blocked
                 if(!visited[x]) {
                     td.push_back(x);
                 }
             }
         }
+        // update binary search
         if(!failed && !visited[n+1]) {
             l = m;
         } else {

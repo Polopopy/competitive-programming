@@ -28,15 +28,14 @@ const int mod = 2e9;
 
 void solve() {
     int n; cin >> n;
-    vector<int> h(n);
-    F0R(i, n) cin >> h[i];
-
-    sort(next(h.begin()), h.end());
-    FOR(i, 1, n) {
-        h[0] = max(h[0], (h[0]+h[i]+1)/2);
-    }
-
-    cout << h[0] << endl;
+    if(n == 1) cout << "walk" << endl;
+    if(n == 2) cout << "yes" << endl;
+    if(n == 3) cout << "yes" << endl;
+    if(n == 4) cout << "no" << endl;
+    if(n == 5) cout << "yes" << endl;
+    if(n == 6) cout << "no" << endl;
+    if(n == 7) cout << "sdrawkcab" << endl;
+    if(n == 8) cout << "5" << endl;
 }
 
 int main() {
@@ -46,11 +45,7 @@ int main() {
     // freopen("filename.in", "r", stdin);
     // freopen("filename.out", "w", stdout);
 
-    int T;
-    cin >> T;
-    while(T--) {
-        solve();
-    }
+    solve();
 
     // solve();
 }

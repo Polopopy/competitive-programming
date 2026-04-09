@@ -1,8 +1,3 @@
-/*
-Author: Ray Han
-It is ok to share my code anonymously for educational purposes
-*/
-
 #include <iostream>
 #include <bits/stdc++.h>
 
@@ -18,3 +13,10 @@ int main() {
     
     solve();
 }
+
+
+
+/*
+Author: Ray Han
+It is ok to share my code anonymously for educational purposes
+*/

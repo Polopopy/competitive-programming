@@ -26,86 +26,42 @@ const int maxn = 1e5 + 5;
 const int inf = 2e9 + 5;
 const int mod = 2e9;
 
-void solve()
-{
-    int n, k;
-    cin >> n >> k;
-    int a = 0, b = 0, c = 0, d = 0;
-    int y = inf, z = inf, p = inf;
-    F0R(i, n)
-    {
-        int x;
-        cin >> x;
-        if (x % 2 == 0)
-            a++;
-        if (x % 3 == 0)
-            b++;
-        if (x % 4 == 0)
-            d++;
-        if (x % 5 == 0)
-            c++;
-        y = min(y, 3 - (x % 3));
-        z = min(z, 5 - (x % 5));
-        p = min(p, 4 - (x % 4));
+void solve() {
+    int n; cin >> n;
+    vector<int> a(n), b(n);
+    F0R(i, n) cin >> a[i];
+    F0R(i, n) cin >> b[i];
+
+    int ans = 0;
+    if(n > 1) {
+        int tmp = gcd(a[1], a[0]);
+        if(a[0] != tmp && b[0] > tmp) {
+            a[0] = tmp;
+            ans++;
+        }
+    }
+    FOR(i, 1, n-1) {
+        int dih = lcm(gcd(a[i], a[i-1]), gcd(a[i], a[i+1]));
+        if(a[i] != dih && b[i] > dih) {
+            a[i] = dih;
+            ans++;
+        }
+    }
+    if(n > 1) {
+        int tmp = gcd(a[n-1], a[n-2]);
+        if(a[n-1] != tmp && b[n-1] > tmp) {
+            ans++;
+            a[n-1] = tmp;
+        }
     }
 
-    if (k == 2)
-    {
-        if (a > 0)
-        {
-            cout << 0 << endl;
-        }
-        else
-        {
-            cout << 1 << endl;
-        }
-    }
-    else if (k == 4)
-    {
-        if (a > 1 || d > 0)
-        {
-            cout << 0 << endl;
-        }
-        else
-        {
-            if (a > 0)
-            {
-                cout << 1 << endl;
-            }
-            else
-            {
-                cout << min(p, 2) << endl;
-            }
-        }
-    }
-    else if (k == 5)
-    {
-        if (c > 0)
-        {
-            cout << 0 << endl;
-        }
-        else
-        {
-            cout << z << endl;
-        }
-    }
-    else
+    // trav(x, a) cout << x << ' ';
+    // cout << endl;
 
-        if (k == 3)
-    {
-        if (b > 0)
-        {
-            cout << 0 << endl;
-        }
-        else
-        {
-            cout << y << endl;
-        }
-    }
+    cout << ans << endl;
 }
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(nullptr);
 
@@ -114,8 +70,7 @@ int main()
 
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         solve();
     }
 
