@@ -1,2 +1,12 @@
-*.exe
-*.prob
+# Whitelist: ignore everything, then allow only source code and repo config
+*
+!*/
+!*.c
+!*.cpp
+!*.h
+!*.hpp
+!*.py
+!*.java
+!.gitignore
+!.gitattributes
+!.vscode/*.json
